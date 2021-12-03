@@ -1,0 +1,14 @@
+#!/bin/sh
+
+cp frr.conf /etc/frr/frr.conf
+cp daemons /etc/frr/daemons
+
+echo
+echo "FRR restarting"
+echo
+
+systemctl restart frr
+systemctl status frr | grep Active >&2
+echo
+echo "Done"
+
